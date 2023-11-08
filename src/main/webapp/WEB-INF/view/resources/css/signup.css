@@ -1,0 +1,84 @@
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    max-width: 400px; /* Limit the maximum width of the container */
+    margin: 100px auto; /* Center the container horizontally */
+}
+
+.form-signin-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-center-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-signin-name-heading,
+.form-signin-password-heading,
+.form-signin-role-heading {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+label {
+    text-align: left;
+    margin-top: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50; /* Match the menu's green color */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #4CAF90;
+}
+
+/* Add styling for the select element */
+select[name="select_role"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+}
+
+/* Style the select dropdown arrow */
+select[name="select_role"]::after {
+    content: "\25BC"; /* Unicode character for a downward-pointing triangle */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Style select when it's focused */
+select[name="select_role"]:focus {
+    border: 1px solid #4CAF90;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}

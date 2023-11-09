@@ -13,8 +13,9 @@ import ru.itis.auction.utils.exceptions.AuctionException;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.UUID;
 
-@WebServlet("/lot/delete")
+@WebServlet("/lots/*")
 public class LotDeleteServlet extends HttpServlet {
 
     AuctionService auctionService;
@@ -26,17 +27,37 @@ public class LotDeleteServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
-
-        String artikul = request.getParameter("delete_artikul");
-
         try {
-            auctionService.closeLot(artikul);
-            response.sendRedirect(request.getContextPath() + "/auction");
-        } catch (AuctionException e) {
-            response.sendRedirect(request.getContextPath() + "/auction");
+
+            String artikul = request.getRequestURI().substring(getServletContext().getContextPath().length() + 6); // request.getParameter("delete_artikul");
+            try {
+                auctionService.closeLot(artikul);
+                response.sendRedirect(request.getContextPath() + "/auction");
+            } catch (AuctionException e) {
+                response.sendRedirect(request.getContextPath() + "/auction");
+            }
+        } catch (NumberFormatException | StringIndexOutOfBoundsException e) {
+            response.setStatus(400);
+            response.getWriter().println("Wrong request");
+            return;
         }
     }
+
+//    @Override
+//    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        request.setCharacterEncoding("UTF-8");
+//        response.setCharacterEncoding("UTF-8");
+//        String artikul = request.getRequestURI().substring(getServletContext().getContextPath().length() + 6); // request.getParameter("delete_artikul");
+//        System.out.println(artikul);
+//        try {
+//            auctionService.closeLot(artikul);
+//            response.sendRedirect(request.getContextPath() + "/auction");
+//        } catch (AuctionException e) {
+//            response.sendRedirect(request.getContextPath() + "/auction");
+//        }
+//    }
+
 }

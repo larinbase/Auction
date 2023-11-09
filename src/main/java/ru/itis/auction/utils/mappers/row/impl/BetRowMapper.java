@@ -1,6 +1,7 @@
-package ru.itis.auction.utils.mappers;
+package ru.itis.auction.utils.mappers.row.impl;
 
 import ru.itis.auction.models.Bet;
+import ru.itis.auction.utils.mappers.row.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

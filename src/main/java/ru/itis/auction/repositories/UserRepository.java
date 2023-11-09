@@ -2,7 +2,8 @@ package ru.itis.auction.repositories;
 
 
 import ru.itis.auction.models.User;
-import ru.itis.auction.utils.mappers.RowMapper;
+import ru.itis.auction.repositories.base.CrudRepository;
+import ru.itis.auction.utils.mappers.row.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface UserRepository extends CrudRepository<User>{
+public interface UserRepository extends CrudRepository<User> {
 
     Optional<User> findById(UUID id);
     Optional<User> findByName(String name);

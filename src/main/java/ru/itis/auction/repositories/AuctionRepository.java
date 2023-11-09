@@ -1,6 +1,7 @@
 package ru.itis.auction.repositories;
 
-import ru.itis.auction.models.Award;
+import ru.itis.auction.models.Auction;
+import ru.itis.auction.models.User;
 import ru.itis.auction.repositories.base.CrudRepository;
 import ru.itis.auction.utils.mappers.row.RowMapper;
 
@@ -11,10 +12,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface AwardRepository extends CrudRepository<Award> {
-    default List<Award> extract(RowMapper<Award> rowMapper, ResultSet resultSet) throws SQLException {
+public interface AuctionRepository extends CrudRepository<Auction> {
+
+    default List<Auction> extract(RowMapper<Auction> rowMapper, ResultSet resultSet) throws SQLException {
         Boolean next = resultSet.next();
-        List<Award> entities = new ArrayList<>();
+        List<Auction> entities = new ArrayList<>();
         int i = 0;
         while (next) {
             entities.add(rowMapper.from(resultSet, i));
@@ -23,5 +25,7 @@ public interface AwardRepository extends CrudRepository<Award> {
         }
         return entities;
     }
-    Optional<List<Award>> findByUserId(UUID userId);
+
+    Optional<Auction> findByUserId(UUID userId);
+    Optional<Auction> findById(Integer id);
 }

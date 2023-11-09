@@ -1,11 +1,9 @@
 package ru.itis.auction.repositories.impl;
 
-import ru.itis.auction.models.Award;
 import ru.itis.auction.models.Lot;
 import ru.itis.auction.repositories.LotRepository;
-import ru.itis.auction.utils.mappers.AwardRowMapper;
-import ru.itis.auction.utils.mappers.LotRowMapper;
-import ru.itis.auction.utils.mappers.RowMapper;
+import ru.itis.auction.utils.mappers.row.impl.LotRowMapper;
+import ru.itis.auction.utils.mappers.row.RowMapper;
 
 import java.sql.*;
 import java.util.List;
@@ -19,7 +17,7 @@ public class LotRepositoryJDBCImpl implements LotRepository {
     //language=sql
     private static final String SQL_SELECT_ALL = "select * from lot where lot.status = 'open'";
     //language=sql
-    private static final String SQL_SAVE = "insert into lot(name, description) values(?, ?)";
+    private static final String SQL_SAVE = "insert into lot(name, description, auction_id) values(?, ?, ?)";
     //language=sql
     private static final String SQL_GET_BY_NAME = "select * from lot where name = ?";
     //language=sql
@@ -30,6 +28,8 @@ public class LotRepositoryJDBCImpl implements LotRepository {
     private static final String SQL_GET_BY_ARTIKUL = "select * from lot where artikul = ?";
     //language=sql
     private static final String SQL_UPDATE = "update lot set status = ? where id = ?";
+    //language=sql
+    private  static final  String SQL_GET_BY_AUCTION_ID = "select * from lot where (auction_id = ? and lot.status = 'open')";
 
     @Override
     public void update(Lot model) {
@@ -109,6 +109,7 @@ public class LotRepositoryJDBCImpl implements LotRepository {
 
             preparedStatement.setString(1, model.getName());
             preparedStatement.setString(2, model.getDescription());
+            preparedStatement.setInt(3, model.getAuctionId());
 
 
             int affect = preparedStatement.executeUpdate();
@@ -170,5 +171,26 @@ public class LotRepositoryJDBCImpl implements LotRepository {
         }
 
         return optionalLot;
+    }
+
+    @Override
+    public Optional<List<Lot>> findByAuctionId(Integer auctionId) {
+        Optional<List<Lot>> optionalLotList;
+
+        try (Connection connection = DriverManager.getConnection(HOST, USER, PASS);
+             PreparedStatement preparedStatement = connection.prepareStatement(SQL_GET_BY_AUCTION_ID)) {
+
+            preparedStatement.setObject(1, auctionId);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                RowMapper<Lot> rowMapper = new LotRowMapper();
+                optionalLotList = Optional.of(extract(rowMapper, resultSet));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return optionalLotList;
     }
 }

@@ -2,10 +2,11 @@ package ru.itis.auction.repositories.impl;
 
 
 
+import ru.itis.auction.models.Auction;
 import ru.itis.auction.models.User;
 import ru.itis.auction.repositories.UserRepository;
-import ru.itis.auction.utils.mappers.RowMapper;
-import ru.itis.auction.utils.mappers.UserRowMapper;
+import ru.itis.auction.utils.mappers.row.RowMapper;
+import ru.itis.auction.utils.mappers.row.impl.UserRowMapper;
 
 import java.sql.*;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.UUID;
 public class UserRepositoryJDBCImpl implements UserRepository {
 
     //language=sql
-    private static final String SQL_SAVE = "insert into account(name, password, role) values(?, ?, ?)";
+    private static final String SQL_SAVE = "insert into account(name, password) values(?, ?)";
     //language=sql
     private static final String SQL_SELECT_ALL = "select * from account";
     //language=sql
@@ -37,7 +38,7 @@ public class UserRepositoryJDBCImpl implements UserRepository {
 
             preparedStatement.setString(1, model.getName());
             preparedStatement.setString(2, model.getPassword());
-            preparedStatement.setString(3, model.getRole());
+
 
             int affect = preparedStatement.executeUpdate();
 

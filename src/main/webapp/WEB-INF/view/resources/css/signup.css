@@ -55,30 +55,4 @@ input[type="submit"]:hover {
     background-color: #4CAF90;
 }
 
-/* Add styling for the select element */
-select[name="select_role"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #000;
-}
 
-/* Style the select dropdown arrow */
-select[name="select_role"]::after {
-    content: "\25BC"; /* Unicode character for a downward-pointing triangle */
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-
-/* Style select when it's focused */
-select[name="select_role"]:focus {
-    border: 1px solid #4CAF90;
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}

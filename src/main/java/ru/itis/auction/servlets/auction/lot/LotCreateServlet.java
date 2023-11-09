@@ -34,7 +34,8 @@ public class LotCreateServlet extends HttpServlet {
         String description = request.getParameter("description");
 
         try {
-            auctionService.createLot(name, description);
+            Integer auctionId = (Integer) request.getSession(false).getAttribute("auctionId");
+            auctionService.createLot(name, description, auctionId);
         } catch (AuctionException e) {
             response.getWriter().write(e.getMessage());
         }

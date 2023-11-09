@@ -19,6 +19,7 @@ import ru.itis.auction.utils.exceptions.AuctionException;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 @WebServlet("/auction")
@@ -44,10 +45,20 @@ public class AuctionServlet extends HttpServlet {
         UUID userId = (UUID) request.getSession(false).getAttribute("userId");
         User user = userRepository.findById(userId).get();
 
+        if(request.getSession(false).getAttribute("auctionId") == null){
+            response.sendRedirect("main");
+            return;
+        }
+        Integer auctionId = (Integer) request.getSession(false).getAttribute("auctionId");
 
-        lots = auctionService.getLotList();
+        if(Objects.equals(auctionService.getOwnAuction(user).getId(), auctionId)){
+            request.setAttribute("role", "admin");
+        } else{
+            request.setAttribute("role", "user");
+        }
 
-        request.setAttribute("role", user.getRole());
+        lots = auctionService.getLotListByAuctionId(auctionId);
+
         request.setAttribute("lots", lots);
 
         request.getRequestDispatcher("auctionpage.ftl").forward(request,response);

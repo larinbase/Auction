@@ -8,7 +8,7 @@ import ru.itis.auction.services.SecurityService;
 
 import java.io.IOException;
 
-@WebFilter(urlPatterns = {"/profile", "/", "/main/", "", "/auction", "/main"})
+@WebFilter(urlPatterns = {"/profile", "/", "/main/", "", "/auction", "/main", "/auctions/*"})
 public class SignInFilter implements Filter {
 
     SecurityService securityService;

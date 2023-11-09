@@ -1,7 +1,8 @@
 package ru.itis.auction.repositories;
 
 import ru.itis.auction.models.Bet;
-import ru.itis.auction.utils.mappers.RowMapper;
+import ru.itis.auction.repositories.base.CrudRepository;
+import ru.itis.auction.utils.mappers.row.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

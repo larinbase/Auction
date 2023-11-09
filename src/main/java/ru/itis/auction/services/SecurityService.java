@@ -37,7 +37,7 @@ public class SecurityService {
         req.getSession(true).setAttribute("userName", username);
     }
 
-    public User signUp(String username, String password, String role) throws SecurityException {
+    public User signUp(String username, String password) throws SecurityException {
         Optional<ErrorEntity> optionalError = validator.validateRegistration(username, password);
         if (optionalError.isPresent()) {
             throw new SecurityException(optionalError.get());
@@ -45,7 +45,7 @@ public class SecurityService {
         User user = User.builder()
                 .name(username)
                 .password(password)
-                .role(role)
+
                 .build();
 
         userRepository.save(user);

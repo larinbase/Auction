@@ -38,12 +38,11 @@ public class SignUpServlet extends HttpServlet {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String role = request.getParameter("select_role");
 
 
         User user;
         try {
-            user = securityService.signUp(username, password, role);
+            user = securityService.signUp(username, password);
             request.getSession(true).setAttribute("userId", user.getId());
             request.getSession(true).setAttribute("userName", username);
             response.sendRedirect("profile");

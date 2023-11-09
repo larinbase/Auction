@@ -8,7 +8,6 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-//@NoArgsConstructor
 @Builder
 @ToString
 public class Lot {
@@ -21,6 +20,8 @@ public class Lot {
     private String status;
     // артикул
     private String artikul;
+    // id аукциона
+    private Integer auctionId;
     // ставки по лоту
     ArrayList<Bet> arrayList;
 

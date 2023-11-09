@@ -19,6 +19,9 @@
             <input type="submit" value="Create Auction"></input>
         </form>
     </div>
+
+    <#include "auctions/auctionlist.ftl">
+
 </div>
 </body>
 </html>

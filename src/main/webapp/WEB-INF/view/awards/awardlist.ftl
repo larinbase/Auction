@@ -1,9 +1,21 @@
-<div  class="award-list" >
+<div class="award-list">
     <h1>Your awards</h1>
-    <ul>
-        <#list lots as lot >
-            <li> ${lot.getArtikul()} - ${lot.getName()}: ${lot.getDescription()} </li>
-            <br/>
+    <table>
+        <thead>
+        <tr>
+            <th>Artikul</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <#list lots as lot>
+            <tr>
+                <td>${lot.getArtikul()}</td>
+                <td>${lot.getName()}</td>
+                <td>${lot.getDescription()}</td>
+            </tr>
         </#list>
-    </ul>
+        </tbody>
+    </table>
 </div>

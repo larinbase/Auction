@@ -2,10 +2,6 @@
     <h2>Create lot</h2>
     <#include "../createform.ftl">
 </div>
-<div class="close-lot-section">
-    <h2>Close lot</h2>
-    <#include "../deleteform.ftl">
-</div>
 <div class="lots-list">
     <h1>List of Lots</h1>
     <table>
@@ -15,6 +11,7 @@
             <th>Name</th>
             <th>Description</th>
             <th>Bets</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -23,7 +20,7 @@
                 <td>${lot.getArtikul()}</td>
                 <td>${lot.getName()}</td>
                 <td>${lot.getDescription()}</td>
-                <td colspan="3"> <!-- Span three columns for bets -->
+                <td> <!-- Span three columns for bets -->
                     <table>
                         <thead>
                         <tr>
@@ -42,6 +39,9 @@
                         </#list>
                         </tbody>
                     </table>
+                </td>
+                <td>
+                    <a href="lots/${lot.artikul}">Закрыть лот</a>
                 </td>
             </tr>
         </#list>

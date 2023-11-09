@@ -1,12 +1,11 @@
-package ru.itis.auction.repositories;
+package ru.itis.auction.repositories.base;
 
 
 
-import ru.itis.auction.models.User;
+import ru.itis.auction.models.Auction;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 public interface CrudRepository<T> {
     void save(T model);

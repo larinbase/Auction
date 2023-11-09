@@ -1,4 +1,4 @@
-package ru.itis.auction.utils.mappers;
+package ru.itis.auction.utils.mappers.row;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

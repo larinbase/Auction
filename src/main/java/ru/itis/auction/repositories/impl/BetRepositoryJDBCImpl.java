@@ -1,9 +1,10 @@
 package ru.itis.auction.repositories.impl;
 
+import ru.itis.auction.models.Auction;
 import ru.itis.auction.models.Bet;
 import ru.itis.auction.repositories.BetRepository;
-import ru.itis.auction.utils.mappers.BetRowMapper;
-import ru.itis.auction.utils.mappers.RowMapper;
+import ru.itis.auction.utils.mappers.row.impl.BetRowMapper;
+import ru.itis.auction.utils.mappers.row.RowMapper;
 
 import java.sql.*;
 import java.util.List;

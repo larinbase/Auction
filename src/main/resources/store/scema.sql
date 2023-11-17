@@ -6,15 +6,17 @@ create TABLE account
     name     varchar(50)      NOT NULL,
     password varchar(50)      NOT NULL
 );
+comment on table account is 'Аккаунт';
 
 create TABLE auction
 (
     id         serial primary key NOT NULL,
     name       varchar(100)       NOT NULL,
     account_id uuid               NOT NULL,
-    status     varchar(10) check (auction.status in ('open', 'close')) default 'open',
+    status     varchar(10)        NOT NULL check (auction.status in ('open', 'close')) default 'open',
     foreign key (account_id) references account (id)
 );
+comment on table auction is 'Аукцион';
 
 create TABLE lot
 (
@@ -26,6 +28,7 @@ create TABLE lot
     auction_id  serial              NOT NULL,
     foreign key (auction_id) references auction (id)
 );
+comment on table lot is 'Лот';
 
 create TABLE bet
 (
@@ -37,6 +40,7 @@ create TABLE bet
     foreign key (lot_id) references lot (id),
     foreign key (account_id) references account (id)
 );
+comment on table bet is 'Ставка';
 
 create table award
 (
@@ -46,3 +50,4 @@ create table award
     foreign key (lot_id) references lot (id),
     foreign key (account_id) references account (id)
 );
+comment on table bet is 'Выигранные лоты';

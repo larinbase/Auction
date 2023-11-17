@@ -13,7 +13,7 @@
     <#include "authorizedmenu.ftl">
 </div>
 <div>
-    <p>HELLO: ${userName}</p>
+    <p>User name: ${userName}</p>
     <p>Your ID: ${userId}</p>
 
     <#include "awards/awardlist.ftl">

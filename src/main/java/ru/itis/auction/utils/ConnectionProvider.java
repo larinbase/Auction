@@ -8,9 +8,9 @@ import java.sql.SQLException;
 
 public class ConnectionProvider {
 
-    final String HOST = "jdbc:postgresql://localhost:5432/AuctionDB";
-    final String USER = "postgres";
-    final String PASS = "1234";
+    private final String HOST = "jdbc:postgresql://localhost:5432/AuctionDB";
+    private final String USER = "postgres";
+    private final String PASS = "1234";
     private static ConnectionProvider _instance;
 
     public static ConnectionProvider getInstance() throws DbException {
@@ -24,9 +24,9 @@ public class ConnectionProvider {
 
     private ConnectionProvider() throws DbException {
         try {
-            //Class.forName("org.").newInstance();
+            Class.forName("org.postgresql.Driver").newInstance();
             con = DriverManager.getConnection(HOST, USER, PASS);
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             throw new DbException("Can't connect to DB.", e);
         }
     }

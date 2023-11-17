@@ -1,22 +1,22 @@
 /* Menu styling */
 .navbar {
-    background-color: #4CAF50; /* Green background color */
-    color: #fff; /* Text color */
+    background-color: #4CAF50;
+    color: #fff;
     padding: 10px;
 }
 
 .navbar-toggle {
-    background-color: #4CAF50; /* Green color for the toggle button */
+    background-color: #4CAF50;
     border: 1px solid #4CAF50;
 }
 
 .navbar-nav {
     list-style: none;
-    display: flex; /* Display the menu items horizontally */
+    display: flex;
 }
 
 .navbar-nav li {
-    margin-right: 10px; /* Add spacing between menu items */
+    margin-right: 10px;
     text-align: center;
 }
 
@@ -24,15 +24,20 @@
     text-decoration: none;
     color: #fff;
     display: block;
-    padding: 20px; /* Increase padding for larger buttons */
-    font-size: 18px; /* Increase font size for larger text */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s; /* Smooth hover transition */
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Add hover effect for menu items */
+
 .navbar-nav li:hover .button_text {
-    background-color: #4CAF90; /* Hover background color */
-    color: #fff; /* Hover text color */
-    text-decoration: underline;
+    background-color: #4CAF90;
+    color: #fff;
+    text-decoration: none;
+
+}
+
+a{
+    text-decoration: none;
 }

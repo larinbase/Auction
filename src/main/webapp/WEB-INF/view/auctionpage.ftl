@@ -1,6 +1,6 @@
 <html lang="eng">
 <head>
-    <title>Hello</title>
+    <title>Auction</title>
     <style>
         <#include "resources/css/menu.css" >
         <#include "resources/css/main.css" >

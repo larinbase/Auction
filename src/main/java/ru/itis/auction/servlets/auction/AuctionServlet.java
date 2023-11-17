@@ -60,6 +60,7 @@ public class AuctionServlet extends HttpServlet {
         lots = auctionService.getLotListByAuctionId(auctionId);
 
         request.setAttribute("lots", lots);
+        request.setAttribute("currentUserId", userId);
 
         request.getRequestDispatcher("auctionpage.ftl").forward(request,response);
     }

@@ -41,7 +41,6 @@ public class AuctionService {
     }
 
     public void makeBet(Double amount, String artikul, Object userId) throws AuctionException {
-        //TODO artikul вместо lotName, потому что пока нет проверки на not null и exist artikul
         Optional<ErrorEntity> optionalError = validator.validateBetCreate(amount, artikul);
         if (optionalError.isPresent()) {
             throw new AuctionException(optionalError.get());

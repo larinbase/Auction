@@ -14,6 +14,7 @@ import ru.itis.auction.utils.exceptions.DbException;
 
 @WebListener
 public class InitListener implements ServletContextListener {
+
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         try {

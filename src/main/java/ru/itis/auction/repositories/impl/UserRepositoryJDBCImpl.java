@@ -5,6 +5,7 @@ package ru.itis.auction.repositories.impl;
 import ru.itis.auction.models.Auction;
 import ru.itis.auction.models.User;
 import ru.itis.auction.repositories.UserRepository;
+import ru.itis.auction.utils.ConnectionProvider;
 import ru.itis.auction.utils.mappers.row.RowMapper;
 import ru.itis.auction.utils.mappers.row.impl.UserRowMapper;
 
@@ -29,7 +30,6 @@ public class UserRepositoryJDBCImpl implements UserRepository {
     final String HOST = "jdbc:postgresql://localhost:5432/AuctionDB";
     final String USER = "postgres";
     final String PASS = "1234";
-
 
     @Override
     public void save(User model) {

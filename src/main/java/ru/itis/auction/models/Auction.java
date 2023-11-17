@@ -2,6 +2,7 @@ package ru.itis.auction.models;
 
 import lombok.*;
 
+import java.util.Objects;
 import java.util.UUID;
 
 @Getter
@@ -14,4 +15,5 @@ public class Auction {
     private String name;
     private UUID userId;
     private String status;
+
 }

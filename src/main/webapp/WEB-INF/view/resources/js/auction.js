@@ -8,6 +8,8 @@ function openModal(element) {
     modal.style.display = "block";
     lotArtikul = element.getAttribute("data-lot-artikul")
     console.log("Lot artikul: " + lotArtikul)
+    // console.log(element.getElementById("current-user-ud"))
+
 }
 
 function closeModal() {
@@ -38,3 +40,6 @@ function submitBid() {
     closeModal();
 }
 
+function createBidRow(){
+
+}

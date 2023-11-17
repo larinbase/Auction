@@ -47,6 +47,9 @@ public class BetCreateServlet extends HttpServlet {
         try {
             UUID userId = (UUID) request.getSession().getAttribute("userId");
             auctionService.makeBet(amount, artikul, userId);
+//            Integer id = lotRepository.findByArtikul(artikul).get().getAuctionId();
+//            List<Lot> lots = auctionService.getLotListByAuctionId(id);
+//            getServletContext().setAttribute("lots", lots);
             response.sendRedirect( request.getContextPath() + "/auction");
         } catch (AuctionException | NullPointerException | NumberFormatException e) {
             response.sendRedirect( request.getContextPath() + "/auction");

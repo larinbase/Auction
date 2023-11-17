@@ -28,6 +28,9 @@ dependencies {
 
     // https://mavenlibs.com/maven/dependency/org.beangle.jakarta/beangle-jakarta-freemarker
     implementation 'org.beangle.jakarta:beangle-jakarta-freemarker:2.3.30'
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation 'org.postgresql:postgresql:42.2.27'
+
 
 }
 

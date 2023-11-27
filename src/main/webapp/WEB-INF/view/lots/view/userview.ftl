@@ -15,7 +15,7 @@
                 <td>${lot.getArtikul()}</td>
                 <td>${lot.getName()}</td>
                 <td>${lot.getDescription()}</td>
-                <td colspan="3"> <!-- Span three columns for bets -->
+                <td id="bets-${lot.getArtikul()}" colspan="3">
                     <table>
                         <thead>
                         <tr>
@@ -33,7 +33,7 @@
                             </tr>
                         </#list>
                         <th>
-                            <button class="open-modal-button" id="bet-button" onclick="openModal(this)" data-lot-artikul="${lot.getArtikul()}">Place Bid</button>
+                            <button class="open-modal-button" id="bet-button" onclick="openModal(this)" data-lot-artikul="${lot.getArtikul()}" curr-user-id="${currentUserId}">Place Bid</button>
                         </th>
                         </tbody>
                     </table>
@@ -42,7 +42,5 @@
         </#list>
         </tbody>
     </table>
-    <#--            pop-up-windows -->
     <#include "../../bet-pop-up-window.ftl"/>
-    <#--            <#include "delete-pop-up-window.ftl"/>-->
 </div>

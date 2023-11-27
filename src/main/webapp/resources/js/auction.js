@@ -1,15 +1,11 @@
 let lotArtikul;
-
+let curUserId;
 
 function openModal(element) {
-    console.log(element)
-
     var modal = document.getElementById("bidModal");
     modal.style.display = "block";
     lotArtikul = element.getAttribute("data-lot-artikul")
-    console.log("Lot artikul: " + lotArtikul)
-    // console.log(element.getElementById("current-user-ud"))
-
+    curUserId = element.getAttribute("curr-user-id");
 }
 
 function closeModal() {
@@ -37,9 +33,17 @@ function submitBid() {
 
     xhr.send(data);
 
+    console.log(curUser)
+    var table = document.getElementById(`bets-${lotArtikul}`)
+    var newRow = document.createElement("tr");
+
+    newRow.innerHTML = `
+            <td>${bidAmount}</td>
+            <td>${new Date()}</td>
+            <td>${curUserId}</td>
+        `;
+
+    table.appendChild(newRow);
+
     closeModal();
-}
-
-function createBidRow(){
-
 }

@@ -1,27 +1,34 @@
-.container {
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.create-lot-section,
+.lots-list {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-
-    max-width: 400px; /* Limit the maximum width of the container */
-    margin: 100px auto; /* Center the container horizontally */
+    margin: 20px;
 }
 
-.form-signin-heading {
+h2 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.form-center-content {
+.form-bet-content {
     display: flex;
     flex-direction: column;
 }
 
-.form-signin-name-heading,
-.form-signin-password-heading {
+.form-bet-amount,
+.form-bet-artikul {
     font-weight: bold;
     margin-top: 10px;
 }
@@ -31,8 +38,7 @@ label {
     margin-top: 5px;
 }
 
-input[type="text"],
-input[type="password"] {
+input[type="text"] {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -42,7 +48,7 @@ input[type="password"] {
 
 input[type="submit"] {
     width: 100%;
-    background-color: #4CAF50; /* Match the menu's green color */
+    background-color: #4CAF50;
     color: #fff;
     padding: 10px;
     border: none;
@@ -53,3 +59,10 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #4CAF90;
 }
+
+.lots-list h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+

@@ -1,11 +1,9 @@
 <html lang="eng">
 <head>
     <title>Main</title>
-    <style>
-        <#include "resources/css/menu.css" >
-        <#include "resources/css/main.css" >
-        <#include  "resources/css/mainpage.css">
-    </style>
+    <link href="resources/css/menu.css" rel="stylesheet">
+    <link href="resources/css/main.css" rel="stylesheet">
+    <link href= "resources/css/mainpage.css" rel="stylesheet">
 </head>
 <body>
 <div class="menu">

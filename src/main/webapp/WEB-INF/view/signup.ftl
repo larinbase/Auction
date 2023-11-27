@@ -1,11 +1,9 @@
 <html lang="eng">
 <head>
     <title>Sign Up</title>
-    <style>
-        <#include "resources/css/signup.css" >
-        <#include "resources/css/menu.css" >
-        <#include "resources/css/main.css" >
-    </style>
+    <link href="resources/css/signup.css" rel="stylesheet" >
+    <link href="resources/css/menu.css" rel="stylesheet" >
+    <link href="resources/css/main.css" rel="stylesheet" >
 </head>
 <body>
 <div class="menu">

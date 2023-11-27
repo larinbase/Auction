@@ -1,17 +1,13 @@
 <html lang="eng">
 <head>
     <title>Auction</title>
-    <style>
-        <#include "resources/css/menu.css" >
-        <#include "resources/css/main.css" >
-        <#include "resources/css/auction.css">
-        <#include "resources/css/lotlist.css">
-        <#include "resources/css/popupwindow.css">
-    </style>
+    <link href="resources/css/menu.css" rel="stylesheet">
+    <link href= "resources/css/main.css" rel="stylesheet">
+    <link href="resources/css/auction.css" rel="stylesheet">
+    <link href="resources/css/lotlist.css" rel="stylesheet">
+    <link href="resources/css/popupwindow.css" rel="stylesheet">
 <#--    <link rel="stylesheet" href="resources/css/menu.css" />-->
-    <script>
-        <#include "resources/js/auction.js">
-    </script>
+    <script src="resources/js/auction.js"></script>
 </head>
 <body>
 <div class="menu">

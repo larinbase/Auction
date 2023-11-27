@@ -2,11 +2,9 @@
 <head>
     <title>Profile</title>
     <meta charset="UTF-8">
-    <style>
-        <#include "resources/css/menu.css" >
-        <#include "resources/css/main.css" >
-        <#include "resources/css/profile.css">
-    </style>
+    <link href="resources/css/menu.css" rel="stylesheet">
+    <link href="resources/css/main.css" rel="stylesheet">
+    <link href="resources/css/profile.css" rel="stylesheet">
 </head>
 <body>
 <div class="menu">

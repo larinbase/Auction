@@ -18,7 +18,7 @@ public class InitListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         try {
-            ConnectionProvider connectionProvider = ConnectionProvider.getInstance();
+            ConnectionProvider connectionProvider =  ConnectionProvider.getInstance();
 
             LotRepository lotRepository = new LotRepositoryJDBCImpl();
             UserRepository userRepository = new UserRepositoryJDBCImpl();

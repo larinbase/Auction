@@ -1,12 +1,9 @@
 <html lang="eng">
 <head>
     <title>Sign In</title>
-<#--    <link href="resources/css/menu.css" rel="stylesheet" />-->
-    <style>
-        <#include "resources/css/signin.css" >
-        <#include "resources/css/menu.css" >
-        <#include "resources/css/main.css" >
-    </style>
+    <link href="resources/css/menu.css" rel="stylesheet">
+    <link href="resources/css/main.css" rel="stylesheet">
+    <link href="resources/css/signin.css" rel="stylesheet">
 </head>
 <body>
 <div class="menu">

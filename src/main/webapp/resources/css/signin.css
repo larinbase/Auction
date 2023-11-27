@@ -1,38 +1,27 @@
-.content {
-    /* Center the content and add some padding */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-/* Style your sections here */
-.create-lot-section,
-.lots-list {
+.container {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-        /*max-width: 400px;*/
-    margin: 20px;
+
+    max-width: 400px;
+    margin: 100px auto;
 }
 
-h2 {
+.form-signin-heading {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-/* Style forms */
-.form-bet-content {
+.form-center-content {
     display: flex;
     flex-direction: column;
 }
 
-.form-bet-amount,
-.form-bet-artikul {
+.form-signin-name-heading,
+.form-signin-password-heading {
     font-weight: bold;
     margin-top: 10px;
 }
@@ -42,7 +31,8 @@ label {
     margin-top: 5px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -52,7 +42,7 @@ input[type="text"] {
 
 input[type="submit"] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Match the menu's green color */
     color: #fff;
     padding: 10px;
     border: none;
@@ -63,11 +53,3 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #4CAF90;
 }
-
-/* Style your list of lots here */
-.lots-list h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-

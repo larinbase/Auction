@@ -1,5 +1,4 @@
 .content {
-    /* Center the content and add some padding */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,7 +6,6 @@
     padding: 20px;
 }
 
-/*Style forms*/
 .form-bet-content {
     display: flex;
     flex-direction: column;

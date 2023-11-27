@@ -1,13 +1,11 @@
-/* Style the outer table */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
 }
 
-/* Style table header */
 thead {
-    background-color: #4CAF50; /* Green header background color */
+    background-color: #4CAF50;
     color: #4CAF50;
 }
 
@@ -16,37 +14,31 @@ th {
     text-align: left;
 }
 
-/* Style table rows and cells */
 td, th {
     padding: 10px;
     border: 1px solid #ccc;
 }
 
-/* Style table row background colors */
 tr:nth-child(odd) {
     background-color: #f4f4f4;
 }
 
-/* Style nested table (for bets) */
 table table {
     width: 100%;
     border-collapse: collapse;
     margin: 5px 0;
 }
 
-/* Style nested table header */
 table table thead {
-    background-color: #0077A7; /* Another background color for nested table header */
+    background-color: #0077A7;
     color: #4CAF90;
 }
 
-/* Style nested table cells */
 table table td, table table th {
     padding: 5px;
     border: 1px solid #ccc;
 }
 
-/* Style nested table row background colors */
 table table tr:nth-child(odd) {
-    background-color: #e0e0e0; /* Another background color for nested table rows */
+    background-color: #e0e0e0;
 }

@@ -20,7 +20,7 @@
                 <td>${lot.getArtikul()}</td>
                 <td>${lot.getName()}</td>
                 <td>${lot.getDescription()}</td>
-                <td> <!-- Span three columns for bets -->
+                <td>
                     <table>
                         <thead>
                         <tr>
@@ -45,9 +45,6 @@
                 </td>
             </tr>
         </#list>
-        <#--                <th>-->
-        <#--                    <button class="open-modal-button" id="delete-button" onclick="openModal(this)" data-lot-artikul="${lot.getArtikul()}">Close Lot</button>-->
-        <#--                </th>-->
         </tbody>
     </table>
 </div>

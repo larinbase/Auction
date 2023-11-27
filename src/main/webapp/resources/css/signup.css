@@ -5,8 +5,8 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 
-    max-width: 400px; /* Limit the maximum width of the container */
-    margin: 100px auto; /* Center the container horizontally */
+    max-width: 400px;
+    margin: 100px auto;
 }
 
 .form-signin-heading {
